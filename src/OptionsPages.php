@@ -127,12 +127,10 @@ class OptionsPages
         /**
          * If resolving field under options page root query set the current language
          */
-        if (self::is_options_page($source)) {
-            $root_query = $info->path[0];
-            $lang = self::$root_query_locale_mapping[$root_query] ?? null;
-            if ($lang) {
-                self::$current_language = $lang;
-            }
+        $root_query = $info->path[0];
+        $lang = self::$root_query_locale_mapping[$root_query] ?? null;
+        if ($lang) {
+            self::$current_language = $lang;
         }
     }
 
